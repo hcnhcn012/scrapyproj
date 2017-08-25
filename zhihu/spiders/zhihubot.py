@@ -29,27 +29,13 @@ class Zhihubot(scrapy.Spider):
     # get your own cookies
     # get all cookies after manually log on to www.zhihu.com
     cookies = {
-        "__utma" : "51854390.1686482292.1503669701.1503669701.1503669701.1",
-        "__utmb" : "51854390.0.10.1503669701",
-        "__utmc" : "51854390",
-        "__utmv" : "51854390.000--|3=entry_date=20170825=1",
-        "__utmz" : "51854390.1503669701.1.1.utmcsr=zhihu.com|utmccn=(referral)|utmcmd=referral|utmcct=/people/twinklymovie88/activities",
-        "_xsrf" : "9b21001ed4b607d92f9013dbc4e415da",
-        "_xsrf" : "9b21001ed4b607d92f9013dbc4e415da",
-        "_zap" : "d7cc8c16-9ccf-4c89-a26d-b8cc1993b283",
-        "aliyungf_tc" : "AQAAAG4u8BFBQAUABYB6fVdVVrIG3+01",
-        "cap_id" : '"NmFlYmZlMzAyODM2NGFmZGFkMzczMmM0NzlkYjcxMzc=|1503669700|ece821c77201a22a1a4ea3c63a5bebbee3a3495e"',
-        "d_c0" : '"AICCeV2ARgyPTgvRirfnBhB8qBuawdKGSb0=|1503669700"',
-        "l_n_c" : "1",
-        "q_c1" : "5df7e924c2bd44508fc876a905ab14f5|1503669700000|1503669700000",
-        "r_cap_id" : '"MWM4YTk1N2Y3ZTRiNDc2Mjk4NzY2MDk1Yzc2NjVjYzk=|1503669700|23091cb6abb1e8d8654c4d5111bd459ecdb1c524"',
-        "z_c0" : "Mi4xeFR4ZkFnQUFBQUFBZ0lKNVhZQkdEQmNBQUFCaEFsVk4wN3JIV1FDXzZkWF9FaV84WFJKVWp6SzIxbWh4a2F3dEdB|1503669715|ad8a8160da6a785d7546bed0be78cea85a76acd2"
+        # add your cookies by press F12 -> Application -> Cookies on Chrome
     }
 
     def start_requests(self):
-        yield scrapy.http.Request(url_to_crawl.format("he-ming-ke"), callback=self.parse, headers=self.headers, cookies=self.cookies)
+        yield scrapy.http.Request(url_to_crawl.format("some-one"), callback=self.parse, headers=self.headers, cookies=self.cookies)
     def parse(self, response):
-        #see the page testing if logged in using cookies
+        #see the page testing if loggedin by using cookies above
         #with open("zhihu.com", "wb") as f:
             #f.write(response.body)
         
