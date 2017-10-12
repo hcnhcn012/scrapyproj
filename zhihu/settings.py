@@ -88,9 +88,15 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 ############################
-#####custom setting#########
+#####custom settings#########
 ############################
 
-#specify mongo database path and database name
-MONGO_URI = 'mongodb://localhost/zhihu_userdb'
+##### populate to MongoDB with/without replicasets to make the database high available #####
+## by default:
+## MONGO_URI : mongodb://localhost:27017/zhihu_userdb
+## MONGO_DATABASE : zhihu_userdb
+MONGO_URI = 'mongodb://localhost:27017/zhihu_userdb'
 MONGO_DATABASE = 'zhihu_userdb'
+## If already configured replica sets, input the name and uri here
+MONGO_REPLSET_NAME = 'None'
+MONGO_REPLSET_URI = 'None'
